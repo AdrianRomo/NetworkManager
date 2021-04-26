@@ -1,0 +1,55 @@
+{%extends 'template.html'%}
+
+{% block content%}
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h2 class="center-align">Editar routers</h2>
+            </div>
+        </div>
+        <hr><br>
+        <center>
+        <div class="row">
+            <form action="" method="post">
+                <div class="divContainer">
+                    <div>
+                        <label class="fields"> <strong> Elija el Router </strong></label>
+                        <select name="router" id="router" style="display: table-column; width:10%;" class="fields">
+                            <option value="R1">R1</option>
+                            <option value="R2">R2</option>
+                            <option value="R3">R3</option>
+                        </select><br><br>
+                    </div>
+                    <label> <strong> Usuario </strong> </label> <input class="textInput" type="text" name="name" style="display: table-column; width:10%;" /><br><br>
+                    <label> <strong> Password </strong> </label> <input class="textInput" type="password" name="pss" style="display: table-column; width:10%;" /><br><br>
+                    <label for="prv"> <strong> Privilegio </strong></label>
+                    <select name="prv" id="prv" style="display: table-column; width:10%;">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                    </select><br><br>
+                    <input class="nobotones" type="submit" id="send-signup" name="signup" value="Crear" />
+                    <input class="nobotones" type="submit" id="send-signup" name="signup" value="Eliminar" />
+                    <input class="nobotones" type="submit" id="send-signup" name="signup" value="Modificar" />
+                    <input class="nobotones" type="submit" id="send-signup" name="signup" value="Conectar" />
+                </div>
+            </form>
+        </div>
+    </center>
+    </div>
+{% endblock %} 

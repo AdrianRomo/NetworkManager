@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'css/form.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'libs/materialize/css/materialize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'libs/fontawesome/css/all.css')}}">
+
+    
+
+    <script src="{{url_for('static', filename= 'libs/jquery-3.1.1/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{url_for('static', filename= 'libs/materialize/js/materialize.min.js')}}"></script>
+    <script src="{{url_for('static', filename= 'js/main.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename= 'libs/fontawesome/js/all.min.js')}}"></script>
+    
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="navbar-fixed">
+    <nav class="transparent z-depth-0">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo"><i class="fas fa-home" style="font-size: 2rem;"></i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="topologia">Topología</a></li>
+                <li><a href="dispositivos">Dispositivos</a></li>
+                <li><a href="monitoreo">Monitoreo</a></li>
+                <li><a href="editar">Editar</a></li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages: %}
+        {% for category, message in messages: %}
+            <div class="container">
+                <div class="card-panel {{category}}">
+                    {{message}}
+                </div>
+            </div>
+        {%endfor%}
+
+    {% endif %}
+    {% endwith %}
+    <div id="particles-js"></div>
+
+    {%block content%}
+    {%endblock%}
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load("particles-js", "{{ url_for('static', filename='particles.json') }}",
+        function(){
+        console.log("particles.json has loaded");
+    });
+    </script>
+</html>
